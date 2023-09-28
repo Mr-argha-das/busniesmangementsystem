@@ -1,9 +1,16 @@
+import 'package:bms_new/Client.add/Client.add.dart';
 import 'package:bms_new/Homepage/HomePage.dart';
+import 'package:bms_new/Users/user.page.dart';
+
 import 'package:bms_new/venture/venture%20add.dart';
+
+import 'package:bms_new/config/app.config.dart';
+import 'package:bms_new/teampage/team.page.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const BmsDashboard());
+  AppConfig.init(child: const BmsDashboard()).then((value) => runApp(value));
 }
 
 class BmsDashboard extends StatefulWidget {
@@ -18,7 +25,7 @@ class _BmsDashboardState extends State<BmsDashboard> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Vanture(),
+      home: Venture(),
     );
   }
 }
