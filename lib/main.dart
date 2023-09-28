@@ -1,9 +1,11 @@
 
 import 'package:bms_new/Homepage/HomePage.dart';
+import 'package:bms_new/config/app.config.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const BmsDashboard());
+  AppConfig.init(child: const BmsDashboard()).then((value) => runApp(value));
+ 
 }
 
 class BmsDashboard extends StatefulWidget {
