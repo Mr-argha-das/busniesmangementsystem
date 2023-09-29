@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Dashboard extends StatefulWidget {
@@ -12,8 +13,15 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue.shade800,
+        title: Text("Dashboard", style: GoogleFonts.montserrat(
+          color: Colors.white,
+          fontSize: 26
+        ),),
+      ),
+      body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -35,7 +43,7 @@ class _DashboardState extends State<Dashboard> {
                         FlSpot(0, 7)
                       ]
                     )
-
+    
                     ]
                   )
                   ) 
@@ -46,7 +54,7 @@ class _DashboardState extends State<Dashboard> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
-
+    
             ],
           )
         ],

@@ -103,3 +103,7 @@ class _VentureState extends State<Venture> {
     );
   }
 }
+
+Venture addVenture(){
+  return Venture();
+}

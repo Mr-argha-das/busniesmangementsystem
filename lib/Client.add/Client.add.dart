@@ -28,9 +28,12 @@ class _ClientAddState extends State<ClientAdd> {
       ),
       body: Form(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 50,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,4 +165,9 @@ class _ClientAddState extends State<ClientAdd> {
       ),
     );
   }
+}
+
+
+ClientAdd clientAdd(){
+  return ClientAdd();
 }

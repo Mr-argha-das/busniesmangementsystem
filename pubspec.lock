@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  async_searchable_dropdown:
+    dependency: "direct main"
+    description:
+      name: async_searchable_dropdown
+      sha256: "832b413192f4afb0bbaa048dbde3dcda1aa82dce8ba51b97a34fb808143d8b23"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.7+4"
   boolean_selector:
     dependency: transitive
     description:
@@ -41,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.2"
+  cool_dropdown:
+    dependency: "direct main"
+    description:
+      name: cool_dropdown
+      sha256: "24400f57740b4779407586121e014bef241699ad2a52c506a7e1e7616cb68653"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   crypto:
     dependency: transitive
     description:
@@ -224,6 +240,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -296,14 +320,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.6"
-  searchable_paginated_dropdown:
+  provider:
     dependency: "direct main"
     description:
-      name: searchable_paginated_dropdown
-      sha256: "289a40f7b0964f91b3d8123b4654a8397ec9df9fd1a6bc8ab545ec33c81a9eb2"
+      name: provider
+      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.0"
+    version: "6.0.5"
   sky_engine:
     dependency: transitive
     description: flutter

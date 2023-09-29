@@ -34,7 +34,7 @@ class _TeamPageTextState extends State<TeamPageText> {
               ]),
           child: TextFormField(
             controller: widget.controller,
-            decoration: InputDecoration(
+          decoration: InputDecoration(
                 prefixIcon: widget.icon,
                 label: Text(
                   widget.label.toString(),
@@ -44,6 +44,9 @@ class _TeamPageTextState extends State<TeamPageText> {
                 filled: true,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15))),
+
+            
+
           ),
         ),
       ),

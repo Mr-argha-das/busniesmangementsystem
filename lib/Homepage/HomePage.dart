@@ -13,11 +13,18 @@ class Dashbord extends StatefulWidget {
 
 class _DashbordState extends State<Dashbord> {
    Map? data;
+   bool showMaster = false;
   @override
   void setState(VoidCallback fn){
     if(mounted){
       super.setState(fn);
     }
+  }
+  int pageindex = 0;
+  void changePage(int i){
+    setState(() {
+      pageindex = i;
+    });
   }
 
   @override
@@ -31,7 +38,7 @@ class _DashbordState extends State<Dashbord> {
           sideBar(),
           Expanded(
             flex: 5,
-            child: Env.pages[0])
+            child: Env.pages[pageindex])
         ],
       )
       );
@@ -59,10 +66,58 @@ class _DashbordState extends State<Dashbord> {
                 const SizedBox(
                   height: 20,
                 ),
-                Text("Dashboard", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),),
+                GestureDetector(
+                  onTap: () => changePage(0),
+                  child: Text("Dashboard", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),)),
                 const SizedBox(height: 18,),
-                Text("Master", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),),
-                
+                GestureDetector(
+                  onTap: () => setState(() {
+                    showMaster = !showMaster;
+                  }),
+                  child: Text("Master", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),)),
+                const SizedBox(
+                  height: 10,
+                ),
+             
+                AnimatedContainer(
+                  height: showMaster? 180: 0,
+                  
+                  duration: const Duration(milliseconds: 300),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade900,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListView(
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      GestureDetector(
+                         onTap: () => changePage(1),
+                        child: Text("Venture Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      GestureDetector(
+                         onTap: () => changePage(2),
+                        child: Text("Team Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      GestureDetector(
+                         onTap: () => changePage(3),
+                        child: Text("User Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      GestureDetector(
+                         onTap: () => changePage(4),
+                        
+                        child: Text("Client Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                    ],
+                  ),
+                ),
+                )
                  
               ],
               
