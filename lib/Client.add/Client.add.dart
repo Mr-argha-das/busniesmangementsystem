@@ -117,7 +117,19 @@ class _ClientAddState extends State<ClientAdd> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(21, 101, 192, 1),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Center(
+                        child: Text(
+                          "Submit",
+                          style: TextStyle(fontSize: 17, color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(

@@ -25,7 +25,7 @@ class _BmsDashboardState extends State<BmsDashboard> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Users(),
+      home: ClientAdd(),
     );
   }
 }

@@ -20,7 +20,7 @@ class _UsersState extends State<Users> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade800,
+        backgroundColor: const Color.fromRGBO(21, 101, 192, 1),
         title: Text(
           "User Roles",
           style: GoogleFonts.montserrat(color: Colors.white),
@@ -40,8 +40,19 @@ class _UsersState extends State<Users> {
                 height: 150,
                 width: 150,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 0, 0, 0),
+                  color: Color.fromARGB(255, 3, 3, 3),
                   shape: BoxShape.circle,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.person_2_outlined,
+                      size: 55,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -112,24 +123,32 @@ class _UsersState extends State<Users> {
                 ),
               ],
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.start,
-            //   crossAxisAlignment: CrossAxisAlignment.start,
-            //   children: [
-            //     const SizedBox(
-            //       width: 450,
-            //     ),
-            //     Expanded(
-            //       child: Padding(
-            //         padding: const EdgeInsets.all(8.0),
-            //         child: Center(child: Phonenumber()),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 450,
-            //     ),
-            //   ],
-            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  width: 210,
+                ),
+                Expanded(
+                  child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: Color.fromRGBO(21, 101, 192, 1),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Center(
+                            child: Text("Submit",
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white))),
+                      )),
+                ),
+                const SizedBox(
+                  width: 200,
+                ),
+              ],
+            ),
           ],
         ),
       ),
