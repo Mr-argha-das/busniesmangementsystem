@@ -1,3 +1,4 @@
+import 'package:bms_new/Users/user.page.dart';
 import 'package:bms_new/teampage/widget/text.field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,6 +11,11 @@ class ClientAdd extends StatefulWidget {
 }
 
 class _ClientAddState extends State<ClientAdd> {
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _numberController = TextEditingController();
+  final _universitynameController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +41,10 @@ class _ClientAddState extends State<ClientAdd> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    // child: teamPageText(),
+                    child: teamPageText(
+                        controller: _nameController,
+                        labele: 'Name',
+                        icon: Icon(Icons.person_3_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -45,8 +54,11 @@ class _ClientAddState extends State<ClientAdd> {
                   child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
-                          // child: teamPageText(),
-                          )),
+                        child: teamPageText(
+                            controller: _emailController,
+                            labele: 'Email',
+                            icon: Icon(Icons.email_sharp)),
+                      )),
                 ),
                 const SizedBox(
                   width: 200,
@@ -63,7 +75,7 @@ class _ClientAddState extends State<ClientAdd> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    // child: teamPageText(),
+                    child: phoneNumber(),
                   ),
                 ),
                 const SizedBox(
@@ -73,8 +85,11 @@ class _ClientAddState extends State<ClientAdd> {
                   child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
-                          // child: teamPageText(),
-                          )),
+                        child: teamPageText(
+                            controller: _universitynameController,
+                            labele: 'University Name',
+                            icon: Icon(Icons.school_sharp)),
+                      )),
                 ),
                 const SizedBox(
                   width: 200,
@@ -91,7 +106,10 @@ class _ClientAddState extends State<ClientAdd> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    // child: teamPageText(),
+                    child: teamPageText(
+                        controller: _passwordController,
+                        labele: 'Password',
+                        icon: Icon(Icons.password_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -99,36 +117,34 @@ class _ClientAddState extends State<ClientAdd> {
                 ),
                 Expanded(
                   child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                          // child: teamPageText(),
-                          )),
+                    padding: const EdgeInsets.all(8.0),
+                  ),
                 ),
                 const SizedBox(
                   width: 200,
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  width: 450,
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                        // child: teamPageText()
-                        ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 450,
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.start,
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     const SizedBox(
+            //       width: 450,
+            //     ),
+            //     Expanded(
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(8.0),
+            //         child: Center(
+            //             // child: teamPageText()
+            //             ),
+            //       ),
+            //     ),
+            //     const SizedBox(
+            //       width: 450,
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),

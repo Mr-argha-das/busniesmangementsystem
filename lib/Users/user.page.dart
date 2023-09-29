@@ -11,6 +11,10 @@ class Users extends StatefulWidget {
 }
 
 class _UsersState extends State<Users> {
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   final _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class _UsersState extends State<Users> {
       appBar: AppBar(
         backgroundColor: Colors.blue.shade800,
         title: Text(
-          "Vanture",
+          "User Roles",
           style: GoogleFonts.montserrat(color: Colors.white),
         ),
       ),
@@ -54,7 +58,10 @@ class _UsersState extends State<Users> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    // child: //"//"teamPageText()"",
+                    child: teamPageText(
+                        controller: _nameController,
+                        labele: 'Name',
+                        icon: Icon(Icons.person_2_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -64,8 +71,11 @@ class _UsersState extends State<Users> {
                   child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
-                          // child: //"//"teamPageText()"",
-                          )),
+                        child: teamPageText(
+                            controller: _emailController,
+                            labele: 'Email',
+                            icon: Icon(Icons.email_sharp)),
+                      )),
                 ),
                 const SizedBox(
                   width: 200,
@@ -82,7 +92,10 @@ class _UsersState extends State<Users> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    // child: //"teamPageText()",
+                    child: teamPageText(
+                        controller: _passwordController,
+                        labele: 'Password',
+                        icon: Icon(Icons.password_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -90,34 +103,33 @@ class _UsersState extends State<Users> {
                 ),
                 Expanded(
                   child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                          // child: //"teamPageText()",
-                          )),
+                    padding: const EdgeInsets.all(8.0),
+                    child: phoneNumber(),
+                  ),
                 ),
                 const SizedBox(
                   width: 200,
                 ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  width: 450,
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Phonenumber()),
-                  ),
-                ),
-                const SizedBox(
-                  width: 450,
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.start,
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     const SizedBox(
+            //       width: 450,
+            //     ),
+            //     Expanded(
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(8.0),
+            //         child: Center(child: Phonenumber()),
+            //       ),
+            //     ),
+            //     const SizedBox(
+            //       width: 450,
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),
@@ -145,6 +157,7 @@ class _PhonenumberState extends State<Phonenumber> {
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: Colors.grey.shade700, width: 1),
               boxShadow: const [
                 BoxShadow(
                     color: Colors.black12,
@@ -152,36 +165,39 @@ class _PhonenumberState extends State<Phonenumber> {
                     blurRadius: 10,
                     offset: Offset(0, 4))
               ]),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                InternationalPhoneNumberInput(
-                  onInputChanged: (PhoneNumber number) {
-                    print(number.phoneNumber);
-                  },
-                  onInputValidated: (bool value) {
-                    print(value);
-                  },
-                  selectorConfig: const SelectorConfig(
-                    selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                  ),
-                  ignoreBlank: false,
-                  autoValidateMode: AutovalidateMode.disabled,
-                  selectorTextStyle: const TextStyle(color: Colors.black),
-                  initialValue: number,
-                  textFieldController: controller,
-                  inputDecoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15))),
-                  formatInput: true,
-                  keyboardType: const TextInputType.numberWithOptions(
-                      signed: true, decimal: true),
-                  inputBorder: const OutlineInputBorder(),
-                  onSaved: (PhoneNumber number) {
-                    print('On Saved: $number');
-                  },
-                ),
-              ])),
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 12,
+              right: 16,
+            ),
+            child: InternationalPhoneNumberInput(
+              onInputChanged: (PhoneNumber number) {
+                print(number.phoneNumber);
+              },
+              onInputValidated: (bool value) {
+                print(value);
+              },
+              selectorConfig: const SelectorConfig(
+                selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+              ),
+              ignoreBlank: false,
+              autoValidateMode: AutovalidateMode.disabled,
+              selectorTextStyle: const TextStyle(color: Colors.black),
+              initialValue: number,
+              textFieldController: controller,
+              inputDecoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFF000000)),
+                      borderRadius: BorderRadius.circular(15))),
+              formatInput: true,
+              keyboardType: const TextInputType.numberWithOptions(
+                  signed: true, decimal: true),
+              // inputBorder: const OutlineInputBorder(),
+              onSaved: (PhoneNumber number) {
+                print('On Saved: $number');
+              },
+            ),
+          )),
     );
   }
 
@@ -199,4 +215,8 @@ class _PhonenumberState extends State<Phonenumber> {
     controller.dispose();
     super.dispose();
   }
+}
+
+Phonenumber phoneNumber() {
+  return Phonenumber();
 }
