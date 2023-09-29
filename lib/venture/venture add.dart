@@ -24,81 +24,108 @@ class _VentureState extends State<Venture> {
           style: GoogleFonts.montserrat(color: Colors.white),
         ),
       ),
-      body: Form(
-        child: Column(
-          key: _formkey,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+
+        child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 250,
+              child: Form(
+                key: _formkey,
                 child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          width: 200,
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: teamPageText(
-                                controller: VentureNamecontroller,
-                                labele: 'Add New Venture',
-                                icon: Icon(Icons.home)),
+                    children: [
+                         
+                        
+                 
+                      Center(
+                        child: Container(
+                          height: 150,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(500)
+                            
                           ),
+                          child:  Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Center(
+                            child: Icon(Icons.house, color: Colors.white, size: 55,),
+                          ),
+                          Text("Uploa a logo \n of venture", 
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            
+                          ),)
+                            ],
+                          )
                         ),
-                        const SizedBox(
-                          width: 30,
-                        ),
-                        Expanded(
-                          child: Padding(
+                      ),
+                      
+                    
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            width: 200,
+                          ),
+                          Expanded(
+                            child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Center(
-                                child: teamPageText(
-                                    controller: ventureTypeController,
-                                    labele: 'Add New Venture type',
-                                    icon: Icon(Icons.type_specimen)),
-                              )),
-                        ),
-                        const SizedBox(
-                          width: 200,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 40,
-                            width: 120,
-                            decoration: BoxDecoration(
-                                color: Colors.blue.shade900,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Center(
-                              child: Text("Submit",
-                                  style: GoogleFonts.montserrat(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400)),
+                              child: teamPageText(
+                                  controller: VentureNamecontroller,
+                                  labele: 'Add New Venture',
+                                  icon: Icon(Icons.home)),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+                          const SizedBox(
+                            width: 30,
+                          ),
+                          Expanded(
+                            child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: teamPageText(
+                                      controller: ventureTypeController,
+                                      labele: 'Add New Venture type',
+                                      icon: Icon(Icons.type_specimen)),
+                                )),
+                          ),
+                          const SizedBox(
+                            width: 200,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: 40,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                  color: Colors.blue.shade900,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Center(
+                                child: Text("Submit",
+                                    style: GoogleFonts.montserrat(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400)),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+              )
+            )
       ),
     );
   }
