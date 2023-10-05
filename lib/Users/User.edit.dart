@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
-class Users extends StatefulWidget {
-  const Users({super.key});
+class UsersEdit extends StatefulWidget {
+  const UsersEdit({super.key});
 
   @override
-  State<Users> createState() => _UsersState();
+  State<UsersEdit> createState() => _UsersEditState();
 }
 
-class _UsersState extends State<Users> {
+class _UsersEditState extends State<UsersEdit> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -22,7 +22,7 @@ class _UsersState extends State<Users> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(21, 101, 192, 1),
         title: Text(
-          "User Roles",
+          "Edit User Roles",
           style: GoogleFonts.montserrat(color: Colors.white),
         ),
       ),
@@ -43,7 +43,7 @@ class _UsersState extends State<Users> {
                   color: Color.fromARGB(255, 3, 3, 3),
                   shape: BoxShape.circle,
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -71,8 +71,8 @@ class _UsersState extends State<Users> {
                     padding: const EdgeInsets.all(8.0),
                     child: teamPageText(
                         controller: _nameController,
-                        labele: 'Name',
-                        icon: Icon(Icons.person_2_sharp)),
+                        labele: 'Edit Name',
+                        icon: const Icon(Icons.person_2_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -84,8 +84,8 @@ class _UsersState extends State<Users> {
                       child: Center(
                         child: teamPageText(
                             controller: _emailController,
-                            labele: 'Email',
-                            icon: Icon(Icons.email_sharp)),
+                            labele: 'Edit Email',
+                            icon: const Icon(Icons.email_sharp)),
                       )),
                 ),
                 const SizedBox(
@@ -105,8 +105,8 @@ class _UsersState extends State<Users> {
                     padding: const EdgeInsets.all(8.0),
                     child: teamPageText(
                         controller: _passwordController,
-                        labele: 'Password',
-                        icon: Icon(Icons.password_sharp)),
+                        labele: 'Edit Password',
+                        icon: const Icon(Icons.password_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -139,9 +139,9 @@ class _UsersState extends State<Users> {
                       child: Container(
                         height: 50,
                         decoration: BoxDecoration(
-                            color: Color.fromRGBO(21, 101, 192, 1),
+                            color: const Color.fromRGBO(21, 101, 192, 1),
                             borderRadius: BorderRadius.circular(20)),
-                        child: Center(
+                        child: const Center(
                             child: Text("Submit",
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.white))),
@@ -211,7 +211,7 @@ class _PhonenumberState extends State<Phonenumber> {
               textFieldController: controller,
               inputDecoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFF000000)),
+                      borderSide: const BorderSide(color: Color(0xFF000000)),
                       borderRadius: BorderRadius.circular(15))),
               formatInput: true,
               keyboardType: const TextInputType.numberWithOptions(
@@ -245,6 +245,6 @@ Phonenumber phoneNumber() {
   return Phonenumber();
 }
 
-Users users() {
-  return Users();
+UsersEdit users() {
+  return const UsersEdit();
 }

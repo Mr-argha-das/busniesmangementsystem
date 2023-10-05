@@ -3,14 +3,14 @@ import 'package:bms_new/teampage/widget/text.field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ClientAdd extends StatefulWidget {
-  const ClientAdd({super.key});
+class ClientEdit extends StatefulWidget {
+  const ClientEdit({super.key});
 
   @override
-  State<ClientAdd> createState() => _ClientAddState();
+  State<ClientEdit> createState() => _ClientEditState();
 }
 
-class _ClientAddState extends State<ClientAdd> {
+class _ClientEditState extends State<ClientEdit> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _universitynameController = TextEditingController();
@@ -21,7 +21,7 @@ class _ClientAddState extends State<ClientAdd> {
       appBar: AppBar(
         backgroundColor: Colors.blue.shade800,
         title: Text(
-          "Client Add",
+          "Client Edit",
           style: GoogleFonts.montserrat(color: Colors.white),
         ),
       ),
@@ -30,7 +30,7 @@ class _ClientAddState extends State<ClientAdd> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Row(
@@ -45,8 +45,8 @@ class _ClientAddState extends State<ClientAdd> {
                     padding: const EdgeInsets.all(8.0),
                     child: teamPageText(
                         controller: _nameController,
-                        labele: 'Name',
-                        icon: Icon(Icons.person_3_sharp)),
+                        labele: 'Edit Name',
+                        icon: const Icon(Icons.person_3_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -58,8 +58,8 @@ class _ClientAddState extends State<ClientAdd> {
                       child: Center(
                         child: teamPageText(
                             controller: _emailController,
-                            labele: 'Email',
-                            icon: Icon(Icons.email_sharp)),
+                            labele: 'Edit Email',
+                            icon: const Icon(Icons.email_sharp)),
                       )),
                 ),
                 const SizedBox(
@@ -92,8 +92,8 @@ class _ClientAddState extends State<ClientAdd> {
                       child: Center(
                         child: teamPageText(
                             controller: _universitynameController,
-                            labele: 'University Name',
-                            icon: Icon(Icons.school_sharp)),
+                            labele: 'Edit University Name',
+                            icon: const Icon(Icons.school_sharp)),
                       )),
                 ),
                 const SizedBox(
@@ -113,8 +113,8 @@ class _ClientAddState extends State<ClientAdd> {
                     padding: const EdgeInsets.all(8.0),
                     child: teamPageText(
                         controller: _passwordController,
-                        labele: 'Password',
-                        icon: Icon(Icons.password_sharp)),
+                        labele: 'Edit Password',
+                        icon: const Icon(Icons.password_sharp)),
                   ),
                 ),
                 const SizedBox(
@@ -126,9 +126,9 @@ class _ClientAddState extends State<ClientAdd> {
                     child: Container(
                       height: 50,
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(21, 101, 192, 1),
+                          color: const Color.fromRGBO(21, 101, 192, 1),
                           borderRadius: BorderRadius.circular(20)),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Submit",
                           style: TextStyle(fontSize: 17, color: Colors.white),
@@ -169,6 +169,6 @@ class _ClientAddState extends State<ClientAdd> {
   }
 }
 
-ClientAdd clientAdd() {
-  return ClientAdd();
+ClientEdit clientAdd() {
+  return const ClientEdit();
 }
