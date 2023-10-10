@@ -2,14 +2,14 @@ import 'package:bms_new/teampage/widget/text.field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Venture extends StatefulWidget {
-  const Venture({super.key});
+class VentureEdit extends StatefulWidget {
+  const VentureEdit({super.key});
 
   @override
-  State<Venture> createState() => _VentureState();
+  State<VentureEdit> createState() => _VentureEditState();
 }
 
-class _VentureState extends State<Venture> {
+class _VentureEditState extends State<VentureEdit> {
   final ventureController = TextEditingController();
   final _formkey = GlobalKey<FormState>();
   final VentureNamecontroller = TextEditingController();
@@ -125,6 +125,6 @@ class _VentureState extends State<Venture> {
   }
 }
 
-Venture addVenture() {
-  return Venture();
+VentureEdit addVenture() {
+  return VentureEdit();
 }

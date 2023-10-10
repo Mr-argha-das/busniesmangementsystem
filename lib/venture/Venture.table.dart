@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class VentureDateTable extends StatefulWidget {
   const VentureDateTable({super.key});
@@ -10,7 +11,12 @@ class VentureDateTable extends StatefulWidget {
 class _VentureDateTableState extends State<VentureDateTable> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: MyDataTable());
+    return Scaffold(
+      appBar: AppBar(title: Text("Venture table",style: GoogleFonts.montserrat(color: Colors.white),),
+      backgroundColor: Colors.blue.shade800,
+      elevation: 0,
+      ),
+      body: MyDataTable());
   }
 }
 
