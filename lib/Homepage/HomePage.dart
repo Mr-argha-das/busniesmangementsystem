@@ -26,6 +26,11 @@ class _DashbordState extends State<Dashbord> {
       pageindex = i;
     });
   }
+  double tabHeight =170;
+  double ventureHeight = 0;
+  double teamHeight = 0;
+  double userHeight = 0;
+  double clientAdd = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +85,7 @@ class _DashbordState extends State<Dashbord> {
                 ),
              
                 AnimatedContainer(
-                  height: showMaster? 180: 0,
+                  height: showMaster? tabHeight: 0,
                   
                   duration: const Duration(milliseconds: 300),
                   decoration: BoxDecoration(
@@ -93,27 +98,171 @@ class _DashbordState extends State<Dashbord> {
                     scrollDirection: Axis.vertical,
                     children: [
                       GestureDetector(
-                         onTap: () => changePage(1),
-                        child: Text("Venture Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                         onTap: () => setState(() {
+                          if(ventureHeight == 0.0){
+                            ventureHeight = 70;
+                            tabHeight = tabHeight  + ventureHeight;
+                          }else{
+                            tabHeight = tabHeight  - ventureHeight;
+                            ventureHeight = 0;
+                          }
+                         }),
+                        child: Text("Venture", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                        AnimatedContainer(
+                          height: ventureHeight,
+                          duration: const Duration(milliseconds: 100),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade800,
+                            borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListView(
+                              children: [
+                                GestureDetector(
+                                  onTap: () => changePage(1),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Text("Venture Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () => changePage(2),
+                                  child: Padding(padding: const EdgeInsets.all(4.0),
+                                  child: Text("Data Table", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ),
                       const SizedBox(
                         height: 15,
                       ),
                       GestureDetector(
-                         onTap: () => changePage(2),
+                         onTap: () => setState(() {
+                           if(teamHeight == 0.0){
+                            teamHeight = 70;
+                            tabHeight = tabHeight  + teamHeight;
+                          }else{
+                            tabHeight = tabHeight  - teamHeight;
+                            teamHeight = 0;
+;                          }
+                         }),
                         child: Text("Team Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                        AnimatedContainer(
+                          height: teamHeight,
+                          duration: const Duration(milliseconds: 100),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade800,
+                            borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListView(
+                              children: [
+                                GestureDetector(
+                                  onTap: () => changePage(3),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Text("Team Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () => changePage(4),
+                                  child: Padding(padding: const EdgeInsets.all(4.0),
+                                  child: Text("Data Table", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ),
                       const SizedBox(
                         height: 15,
                       ),
                       GestureDetector(
-                         onTap: () => changePage(3),
+                         onTap: () => setState(() {
+                          if(userHeight == 0.0){
+                            userHeight = 70;
+                            tabHeight = tabHeight  + userHeight;
+                          }else{
+                            tabHeight = tabHeight  - userHeight;
+                            userHeight = 0;
+                          }
+                         }),
                         child: Text("User Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                      AnimatedContainer(
+                          height: userHeight,
+                          duration: const Duration(milliseconds: 100),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade800,
+                            borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListView(
+                              children: [
+                                GestureDetector(
+                                  onTap: () => changePage(5),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Text("User Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () => changePage(6),
+                                  child: Padding(padding: const EdgeInsets.all(4.0),
+                                  child: Text("Data Table", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ),
                       const SizedBox(
                         height: 15,
                       ),
                       GestureDetector(
-                         onTap: () => changePage(4),
+                         onTap: () => setState(() {
+                          if(clientAdd == 0.0){
+                            clientAdd = 70;
+                            tabHeight = tabHeight  + clientAdd;
+                          }else{
+                            tabHeight = tabHeight  - clientAdd;
+                            clientAdd = 0;
+                          }
+                         }),
                         
                         child: Text("Client Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
+                      AnimatedContainer(
+                          height: clientAdd,
+                          duration: const Duration(milliseconds: 100),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade800,
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListView(
+                              children: [
+                                GestureDetector(
+                                  onTap: () => changePage(7),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Text("Client Add", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () => changePage(8),
+                                  child: Padding(padding: const EdgeInsets.all(4.0),
+                                  child: Text("Data Table", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ),
                     ],
                   ),
                 ),
