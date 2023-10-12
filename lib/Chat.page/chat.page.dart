@@ -31,7 +31,7 @@ class _ChatSectionState extends State<ChatSection> {
         body: Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: Colors.blueGrey,
+      color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,7 +112,7 @@ class _ContianerboxState extends State<Contianerbox> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 190,
+      height: 230,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
           color: const Color.fromARGB(255, 124, 164, 233),
@@ -515,4 +515,9 @@ class _ChatPageState extends State<ChatPage> {
           user: _user,
         ),
       );
+}
+
+
+ChatSection chatSection(){
+  return ChatSection();
 }

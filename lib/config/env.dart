@@ -1,3 +1,4 @@
+import 'package:bms_new/Chat.page/chat.page.dart';
 import 'package:bms_new/Client.add/Client.add.dart';
 import 'package:bms_new/Client.add/Client_table.dart';
 import 'package:bms_new/Team.page/Team.table.dart';
@@ -20,5 +21,6 @@ class Env {
     userDateTable(),
     clientAdd(),
     clientDateTable(),
+    chatSection(),
   ];
 }

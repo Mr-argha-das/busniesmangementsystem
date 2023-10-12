@@ -26,7 +26,7 @@ class _DashbordState extends State<Dashbord> {
       pageindex = i;
     });
   }
-  double tabHeight =170;
+  double tabHeight =220;
   double ventureHeight = 0;
   double teamHeight = 0;
   double userHeight = 0;
@@ -263,6 +263,13 @@ class _DashbordState extends State<Dashbord> {
                             ),
                           )
                         ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        GestureDetector(
+                         onTap: () => changePage(9),
+                        
+                        child: Text("Orders Chat", style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w500),)),
                     ],
                   ),
                 ),
