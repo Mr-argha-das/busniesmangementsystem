@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ClientDateTable extends StatefulWidget {
   const ClientDateTable({super.key});
@@ -10,7 +11,12 @@ class ClientDateTable extends StatefulWidget {
 class _ClientDateTableState extends State<ClientDateTable> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: MyDataTable());
+    return Scaffold(
+      appBar: AppBar(title: Text("Client table",style: GoogleFonts.montserrat(color: Colors.white),),
+      backgroundColor: Colors.blue.shade800,
+      elevation: 0,
+      ),
+      body: MyDataTable());
   }
 }
 
