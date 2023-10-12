@@ -102,14 +102,14 @@ class _AddOrderState extends State<AddOrder> {
                                             color: Colors.black, width: 1),
                                         borderRadius: BorderRadius.circular(15),
                                       ),
-                                      child: Column(
+                                      child: const Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: EdgeInsets.all(8.0),
                                             child: Text("Module Code"),
                                           ),
                                         ],
@@ -127,7 +127,7 @@ class _AddOrderState extends State<AddOrder> {
                                         borderRadius:
                                             BorderRadius.circular(15)),
                                     child: const Center(
-                                        child: Text("Module Name")),
+                                        child: Text("Module Name ")),
                                   ),
                                 ),
                               ),

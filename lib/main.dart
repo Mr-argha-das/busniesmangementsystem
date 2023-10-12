@@ -1,4 +1,5 @@
 import 'package:bms_new/AddOrder/Add.order.dart';
+import 'package:bms_new/Chat.page/chat.page.dart';
 import 'package:bms_new/Client.add/Client_table.dart';
 import 'package:bms_new/Homepage/HomePage.dart';
 import 'package:bms_new/Team.page/Team.table.dart';
@@ -23,7 +24,7 @@ class _BmsDashboardState extends State<BmsDashboard> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AddOrder(),
+      home: ChatSection(),
     );
   }
 }
